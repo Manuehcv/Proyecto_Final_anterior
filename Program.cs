@@ -6,7 +6,9 @@ namespace Manuel_Carvajal
     {
         static void Main(string[] args)
         {
-            testGetUsuario(2);
+            //testGetUsuario(2);
+            //testGetProductsByUserID(1);
+
 
         }
         static void testGetUsuario(long id)
@@ -22,5 +24,20 @@ namespace Manuel_Carvajal
             Console.WriteLine(user.Contraseña);
             Console.WriteLine(user.Mail);
         }
+        static void testGetProductsByUserID(long id)
+        {
+            List<Producto> products = ManejadorProducto.GetProductosByUser(id);
+            foreach (Producto product in products)
+            {
+                Console.WriteLine("---------------------------------");
+                Console.WriteLine(product.Id.ToString());
+                Console.WriteLine(product.Descripcion);
+                Console.WriteLine(product.Costo.ToString());
+                Console.WriteLine(product.PrecioVenta.ToString());
+                Console.WriteLine(product.Stock.ToString());
+                Console.WriteLine(product.IdUsuario.ToString());
+            }
+        }
     }
+
 }
