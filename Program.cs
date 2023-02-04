@@ -1,4 +1,5 @@
 ﻿using Proyecto_final;
+using System;
 
 namespace Manuel_Carvajal
 {
@@ -8,8 +9,23 @@ namespace Manuel_Carvajal
         {
             //testGetUsuario(2);
             //testGetProductsByUserID(1);
+            testGetVentaByUserID(1);
 
+        }
 
+        static void testGetVentaByUserID(long id)
+        {
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("Lista de Ventas realizadas por el Usuario solicitado.");
+            Console.WriteLine("---------------------------------");
+            List<Venta> ventas = ManejadorVenta.GetVentaByUser(id);
+            foreach (Venta venta in ventas)
+            {
+                Console.WriteLine("Id: " + venta.Id.ToString());
+                Console.WriteLine("Comentarios: " + venta.Comentarios);
+                Console.WriteLine("IdUsuario: " + venta.IdUsuario.ToString());
+                Console.WriteLine("---------------------------------");
+            }
         }
         static void testGetUsuario(long id)
         {
