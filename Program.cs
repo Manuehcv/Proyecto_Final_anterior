@@ -7,10 +7,11 @@ namespace Manuel_Carvajal
     {
         static void Main(string[] args)
         {
-            //testGetUsuario(2);
-            //testGetProductsByUserID(1);
-            //testGetVentaByUserID(1);
+            testGetUsuario(2);
+            testGetProductsByUserID(1);
+            testGetVentaByUserID(1);
             testUserLogIn("eperez", "SoyErnestoPerez");
+            testGetProductosVendidos(1);
 
         }
 
@@ -77,7 +78,14 @@ namespace Manuel_Carvajal
             Console.WriteLine(testUser.Mail);
 
         }
-
+        static void testGetProductosVendidos(long idUsuario)
+        {
+            List<string> prueba = ManejadorProductoVendido.GetNombresDeProductosVendidos(idUsuario);
+            foreach(string p in prueba)
+            {
+                Console.WriteLine(p);
+            }
+        }
     }
 
 }
