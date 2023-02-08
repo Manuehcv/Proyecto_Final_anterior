@@ -8,11 +8,18 @@ namespace Proyecto_final
 {
     internal class Producto
     {
-        private int id;
+        private long id;
         private string descripcion;
-        private float costo;
-        private float precioVenta;
+        private decimal costo;
+        private decimal precioVenta;
         private int stock;
-        private int idUsuario;
+        private long idUsuario;
+
+        public long Id { get => id; set => id = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public decimal Costo { get => costo; set => costo = value; }
+        public decimal PrecioVenta { get => precioVenta; set => precioVenta = value; }
+        public int Stock { get => stock; set => stock = value; }
+        public long IdUsuario { get => idUsuario; set => idUsuario = value; }
     }
 }
